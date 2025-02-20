@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Egg Timer</title>
+        <!-- Lien vers le fichier CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div class="container">
+        <h1>EGG TIMER</h1>
+        
+        <div class="egg-animation">
+            <svg class="egg-svg" viewBox="0 0 100 140">
+                <defs>
+                    <linearGradient id="eggGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Corps de l'œuf -->
+                <path d="M50,140 C22.4,140 0,117.6 0,90 C0,62.4 22.4,0 50,0 C77.6,0 100,62.4 100,90 C100,117.6 77.6,140 50,140 Z" 
+                      fill="url(#eggGradient)" 
+                      stroke="rgba(255,255,255,0.5)" 
+                      stroke-width="2"/>
+                
+                <!-- Yeux -->
+                <g class="eyes" transform="translate(0, 40)">
+                    <!-- Œil gauche -->
+                    <g class="eye left">
+                        <circle cx="32" cy="0" r="4" fill="rgba(0,0,0,0.8)"/>
+                        <circle cx="30" cy="-1" r="1" fill="white"/>
+                    </g>
+                    <!-- Œil droit -->
+                    <g class="eye right">
+                        <circle cx="68" cy="0" r="4" fill="rgba(0,0,0,0.8)"/>
+                        <circle cx="66" cy="-1" r="1" fill="white"/>
+                    </g>
+                </g>
+                
+                <!-- Expression détendue -->
+                <path class="mouth" 
+                      d="M40,60 Q50,65 60,60" 
+                      stroke="rgba(0,0,0,0.8)" 
+                      stroke-width="2" 
+                      fill="none" 
+                      stroke-linecap="round"/>
+                
+                <!-- Petites joues -->
+                <circle cx="30" cy="55" r="3" fill="rgba(255,192,203,0.3)"/>
+                <circle cx="70" cy="55" r="3" fill="rgba(255,192,203,0.3)"/>
+                
+                <!-- Reflet élégant -->
+                <path d="M30,25 Q50,15 70,25" 
+                      fill="none" 
+                      stroke="rgba(255,255,255,0.3)" 
+                      stroke-width="1"/>
+            </svg>
+        </div>
+
+        <div class="egg-types">
+            <div class="egg-type" data-time="180">
+                Mollet<br>3:00
+            </div>
+            <div class="egg-type" data-time="300">
+                À la coque<br>5:00
+            </div>
+            <div class="egg-type" data-time="420">
+                Dur<br>7:00
+            </div>
+            <div class="egg-type" data-time="360">
+                Poché<br>6:00
+            </div>
+        </div>
+        <br>
+        <div class="timer-display">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke-width="5"/>
+            </svg>
+            <div class="timer">00:00</div>
+        </div>
+        <br>
+        <div class="controls">
+            <button class="start">Start</button>
+            <button class="stop">Reset</button>
+        </div>
+
+        <div class="history">
+            <h3>Historique</h3>
+            <div class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
